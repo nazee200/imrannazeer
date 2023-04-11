@@ -1,0 +1,52 @@
+<div class="col-sm-6">
+    <h1>Employee Details</h1>        
+    <form  (ngSubmit)="onSubmit()" [formGroup]="EmployeeForms">
+        <!-- <div>
+            <label for="Employee-id">Employee Id:</label>
+            <input type="number" id="Employee-id" formControlName="id"  class="form-control" placeholder="Employee id" required>
+        </div> -->
+        <div>
+            <label for="Employee-name">Employee Name:</label>
+            <input type="text" id="Employee-name" formControlName="name" class="form-control" placeholder="Employee name" required>
+        </div>
+        <div>
+            <label for="Employee-dept">Employee Dept:</label>
+            <input type="text" id="Employee-dept" formControlName="department"  class="form-control" placeholder="Employee dept" required>
+        </div>
+        <div>
+            <label >Gender:</label><br>
+            <label for="male"><input type="radio"  value="male"  formControlName="sex" id="male" >Male </label>
+            <label for="female"><input type="radio" value="female"  formControlName="sex" id="female">Female  </label>
+            <label for="others"><input type="radio" value="others"  formControlName="sex" id="others">Others  </label>
+        </div>
+        
+        <div>
+            <label for="maritalstatus">Marital Status: </label>
+             <select formControlName="maritalstatus" id="maritalstatus">
+                <option value="married" >Married</option>
+                <option value="unmarried">Unmarried</option>
+             </select>
+        </div>
+         
+         <div>
+             <label for="salary">Salary:</label>
+             <input type="number" class="form-control"  formControlName="salary" id="salary" placeholder="Employee Salary" required>
+         </div>
+         <!-- <div  style="display: none;">
+            <label for="salary">EmpId:</label>
+            <input type="number" class="form-control"  formControlName="salary" id="salary" placeholder="Employee Salary" required>
+        </div> -->
+         <div>
+            <label for="Address">Address:</label>
+            <textarea formControlName="address" id="Address"   class="form-control" cols="30" rows="3" placeholder="Employee Address" required></textarea>
+         </div>
+         
+            <div class="btn">
+                <button class="btn btn-success" type="submit" *ngIf="!updatactive">Submit</button>
+                <button class="btn btn-warning" *ngIf="updatactive" (click)="onUpdate()">Update</button>
+                <button class="btn btn-primary" (click)="onView()">View</button>
+                <button class="btn btn-danger"(click)='onCancel()'>Cancel</button>
+            </div>
+         
+    </form>
+</div>

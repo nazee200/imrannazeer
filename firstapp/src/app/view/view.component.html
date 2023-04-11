@@ -1,0 +1,38 @@
+<a [routerLink]="['']">Back</a>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Department/Team</th>
+                    <th>Sex</th>
+                    <th>Marital Status</th>
+                    <th>Salary</th>
+                    <th>Address</th>
+                    <th>Options</th>
+                    
+
+                </thead>
+                <tbody *ngFor="let emp  of employeearr">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.department}}</td>
+                    <td>{{emp.sex}}</td>
+                    <td>{{emp.maritalstatus}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.address}}</td>
+                    <td>
+                        <button class="btn btn-link" (click)="fillform(emp)">Edit</button>
+                        <button class="btn btn-link" (click)="onDelete(emp)">Delete</button>
+                    </td>
+                    
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
